@@ -29,7 +29,7 @@ This repository contains a Python script that simulates gravitational interactio
 1. Clone this repository:
    ```bash
    git clone https://github.com/MengAiDev/Nbody.git
-   cd nbody-simulation
+   cd Nbody
    ```
 
 2. Install the required Python packages:
