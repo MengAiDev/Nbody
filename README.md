@@ -2,7 +2,6 @@
 
 This repository contains a Python script that simulates gravitational interactions between multiple celestial bodies and generates a video visualization of their motion. The implementation uses velocity Verlet integration for numerical stability and includes advanced visualization features.
 
-![Sample Simulation](nbody3.mp4)
 
 ## Features
 
@@ -114,9 +113,7 @@ The gravitational force between bodies is calculated using Newton's law of unive
 
 ## Sample Outputs
 
-- [3-body simulation (nbody3.mp4)](nbody3.mp4) - A basic simulation with 3 celestial bodies
-- [10-body simulation with 1000 steps (nbody10_1000.mp4)](nbody10_1000.mp4) - A more complex simulation with 10 bodies running for 1000 time steps
-- [10-body simulation with colors (10body_color.mp4)](10body_color.mp4) - A simulation with custom color scheme
+Please see the [videos](videos) folder for sample outputs.
 
 ## Contributing
 
