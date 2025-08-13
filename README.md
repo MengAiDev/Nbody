@@ -1,6 +1,6 @@
 # N-Body Simulation Video Generator
 
-This repository contains a Python script that simulates gravitational interactions between multiple celestial bodies and generates a video visualization of their motion. The implementation uses velocity Verlet integration for numerical stability.
+This repository contains a Python script that simulates gravitational interactions between multiple celestial bodies and generates a video visualization of their motion. The implementation uses velocity Verlet integration for numerical stability and includes advanced visualization features.
 
 ![Sample Simulation](nbody3.mp4)
 
@@ -12,7 +12,10 @@ This repository contains a Python script that simulates gravitational interactio
 - Includes gravity softening to prevent singularities
 - Configurable parameters including number of bodies, simulation time, time step size, and more
 - Optional motion trails for visualizing trajectories
+- Full trajectory visualization option
+- Color customization with multiple color schemes
 - Periodic boundary conditions
+- Trail transparency and fading effects
 
 ## Requirements
 
@@ -61,6 +64,20 @@ python main.py --n_bodies 10 --t_end 20 --dt 0.01 --output nbody_simulation.mp4
 | `--fps` | Frames per second for output video | 30 |
 | `--trail` | Length of motion trails (0 to disable) | 30 |
 | `--dpi` | Dots per inch for output video | 100 |
+| `--colors` | Color scheme for bodies (see options below) | matplotlib color cycle |
+| `--show_full_trajectory` | Show full trajectory for each body | False |
+| `--trail_alpha` | Alpha (transparency) for motion trails | 0.7 |
+| `--trail_fade` | Fade out older parts of the trajectory | False |
+
+### Color Schemes
+
+The `--colors` argument supports several options:
+- Single color name (e.g., 'red')
+- Comma-separated list (e.g., 'red,green,blue')
+- Colormap name (e.g., 'viridis', 'plasma')
+- 'mass' to color by mass
+- 'random' for random colors
+- Default: matplotlib color cycle
 
 ### Examples
 
@@ -79,6 +96,16 @@ Create a high-resolution video with motion trails:
 python main.py --n_bodies 15 --t_end 25 --dpi 200 --trail 50 --output high_res_nbody.mp4
 ```
 
+Generate a simulation with specific colors:
+```bash
+python main.py --n_bodies 5 --colors "red,blue,green,yellow,purple"
+```
+
+Create a simulation with full trajectory visualization:
+```bash
+python main.py --n_bodies 8 --show_full_trajectory --trail_fade --colors viridis
+```
+
 ## How It Works
 
 The simulation uses the [velocity Verlet integration method](https://en.wikipedia.org/wiki/Verlet_integration#Velocity_Verlet), which is symplectic and provides better long-term stability for orbital mechanics than simple Euler integration.
@@ -89,6 +116,7 @@ The gravitational force between bodies is calculated using Newton's law of unive
 
 - [3-body simulation (nbody3.mp4)](nbody3.mp4) - A basic simulation with 3 celestial bodies
 - [10-body simulation with 1000 steps (nbody10_1000.mp4)](nbody10_1000.mp4) - A more complex simulation with 10 bodies running for 1000 time steps
+- [10-body simulation with colors (10body_color.mp4)](10body_color.mp4) - A simulation with custom color scheme
 
 ## Contributing
 
