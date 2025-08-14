@@ -2,6 +2,7 @@
 
 This repository contains a Python script that simulates gravitational interactions between multiple celestial bodies and generates a video visualization of their motion. The implementation uses velocity Verlet integration for numerical stability and includes advanced visualization features.
 
+https://www.bilibili.com/video/BV12YbizqEV4
 
 ## Features
 
